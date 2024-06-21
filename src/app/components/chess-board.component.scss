@@ -1,0 +1,31 @@
+$board-color: #f0d9b5;
+$black-square-color: #493eaf;
+$white-square-color: #dfdfdf;
+
+.board {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 500px;
+  height: 500px;
+  background-color: $board-color;
+
+  .square.white {
+    color: white;
+    background-color: $white-square-color;
+  }
+
+  .square.black {
+    background-color: $black-square-color;
+    color: black;
+  }
+
+  .piece.white {
+    color: white;
+  }
+
+  .piece.black {
+    color: black;
+  }
+}

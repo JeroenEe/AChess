@@ -1,0 +1,17 @@
+<div id="board" class="board">
+  @for(row of board(); track row) { @for(cell of row; track cell) {
+    <ng-container *ngTemplateOutlet="square; context: { $implicit: cell }"></ng-container>
+  } }
+</div>
+
+<ng-template #square let-square>
+  <div [id]="square.name" (dragenter)="onDragOver($event, square)" [ngClass]="['square', square.color]">
+    @if (square.piece != null) {
+      <div [id]="square.coordinates.name" (dragend)="onDragEnd($event)" [draggable]="square" (dragstart)="onDragStart($event, square)" [ngClass]="['piece', square.piece.color]">
+        <img [height]="50" [width]="50" src="{{'chess-icons/' + square.piece.imageFileName() }}" alt="{{square.piece.imageFileName()}}">
+      </div>
+    }
+  </div>
+</ng-template>
+
+<h3>dragging: {{ dragging?.name }} {{ dragging?.piece?.type }}</h3>
