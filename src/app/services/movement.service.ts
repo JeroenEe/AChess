@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Square } from '../logic/Square';
-import ChessBoard from '../logic/ChessBoard';
 
 @Injectable({ providedIn: 'root' })
 export class MovementService {

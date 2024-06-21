@@ -38,6 +38,10 @@ export default class ChessBoard {
     return board;
   }
 
+  getSquareByIndexes(x: number, y: number): Square {
+    return this.board[y][x];
+  }
+
   placeChessPieces(savedGrid?: Square[][]) {
     if (savedGrid) {
       this.board = savedGrid;

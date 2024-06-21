@@ -6,7 +6,7 @@ export class Square {
   color: TColor;
   piece?: Piece;
 
-  private parent: ChessBoard;
+  public parent: ChessBoard;
 
   constructor(
     coordinates: TCoordinates,
