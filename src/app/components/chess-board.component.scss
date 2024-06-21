@@ -28,7 +28,8 @@ $white-square-color: #dfdfdf;
   }
 
   .square.black {
-    background-color: $black-square-color;
+    
+    background: linear-gradient(to right, $black-square-color, lighten($black-square-color, 20%));
     color: black;
   }
 
