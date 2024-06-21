@@ -5,14 +5,17 @@ import { Square } from '../logic/Square';
 export class MovementService {
   constructor() {}
 
-  async move(from: Square, to: Square) {
-    // No need to move if it stays in the same place.
+  async move(from: Square, to: Square): Promise<boolean> {
+    // No need to check anything if it stays in the same place.
     if (from?.coordinates == to?.coordinates) {
-      return;
+      return false;
     }
+
+    // Check if the move can be done
     if (from.piece?.isLegalMove(from, to)) {
       to.piece = from.piece;
       from.piece = undefined;
-    }
+      return true;
+    } else return false;
   }
 }

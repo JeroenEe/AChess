@@ -11,11 +11,15 @@
     isValidTargetSquare(square)()
     ]">
     @if (square.piece != null) {
-      <div (dragend)="onDragEnd($event)" [draggable]="square" (dragstart)="onDragStart($event, square)" [ngClass]="['piece', square.piece.color]">
+      <div (dragend)="onDragEnd($event)" (dragstart)="onDragStart($event, square)" [ngClass]="['piece', square.piece.color]">
         <img [height]="50" [width]="50" src="{{'chess-icons/' + square.piece.imageFileName() }}" alt="{{square.piece.imageFileName()}}">
       </div>
     }
   </div>
 </ng-template>
+
+<div id="gameInfo">
+  <p>It's {{turnService.turn}}'s turn!</p>
+</div>
 
 <h3>dragging: {{ dragging?.name }} {{ dragging?.piece?.type }}</h3>

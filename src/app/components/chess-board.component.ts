@@ -3,6 +3,7 @@ import ChessBoard from '../logic/ChessBoard';
 import { Square } from '../logic/Square';
 import { CommonModule } from '@angular/common';
 import { MovementService } from '../services/movement.service';
+import { TurnService } from '../services/turn.service';
 
 @Component({
   standalone: true,
@@ -15,6 +16,7 @@ export class ChessBoardComponent implements OnInit {
   chessBoard: ChessBoard = new ChessBoard();
   board = computed(() => this.chessBoard.board);
   movementService = inject(MovementService);
+  turnService = inject(TurnService);
 
   ngOnInit() {
     this.chessBoard.placeChessPieces();
@@ -35,6 +37,10 @@ export class ChessBoardComponent implements OnInit {
   targetSquare: Square | null = null;
 
   async onDragStart(event: DragEvent, square: Square) {
+    if (this.turnService.turn != square.piece?.color) {
+      return;
+    }
+
     this.dragging = square;
     if (this.dragging?.piece != null) {
       console.log('drag start', event, square);
@@ -43,10 +49,13 @@ export class ChessBoardComponent implements OnInit {
 
   async onDragEnd(event: DragEvent) {
     if (this.dragging != null && this.targetSquare != null) {
-      const targetSquare = this.movementService.move(
+      const success = await this.movementService.move(
         this.dragging,
         this.targetSquare
       );
+      if (success) {
+        this.turnService.changeTurn();
+      }
     }
     this.dragging = null;
     this.targetSquare = null;
