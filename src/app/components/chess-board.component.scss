@@ -11,6 +11,17 @@ $white-square-color: #dfdfdf;
   height: 500px;
   background-color: $board-color;
 
+  .square {
+    justify-content: center;
+    align-content: center;
+  }
+
+  .piece {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+  }
+
   .square.white {
     color: white;
     background-color: $white-square-color;

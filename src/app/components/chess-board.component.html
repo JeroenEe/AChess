@@ -7,7 +7,7 @@
 <ng-template #square let-square>
   <div [id]="square.name" (dragenter)="onDragOver($event, square)" [ngClass]="['square', square.color]">
     @if (square.piece != null) {
-      <div [id]="square.coordinates.name" (dragend)="onDragEnd($event)" [draggable]="square" (dragstart)="onDragStart($event, square)" [ngClass]="['piece', square.piece.color]">
+      <div (dragend)="onDragEnd($event)" [draggable]="square" (dragstart)="onDragStart($event, square)" [ngClass]="['piece', square.piece.color]">
         <img [height]="50" [width]="50" src="{{'chess-icons/' + square.piece.imageFileName() }}" alt="{{square.piece.imageFileName()}}">
       </div>
     }
