@@ -1,7 +1,9 @@
 # AChess
 
-![image](https://github.com/JeroenEe/AChess/assets/60618555/63dafe2e-b0fe-4997-ad4d-168652596cf4)
+![image](https://github.com/JeroenEe/AChess/assets/60618555/e5cb30c8-7e4b-472c-bbc5-ccdb797764e9)
 
+Update: 21/6/'24
+- Basic pawn movement added.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
