@@ -21,6 +21,17 @@ export class ChessBoardComponent implements OnInit {
   }
 
   dragging: Square | null = null;
+
+  isValidTargetSquare(square: Square) {
+    return computed(() => {
+      return this.dragging != null && this.dragging.piece != null
+        ? this.dragging.piece.isLegalMove(this.dragging, square)
+          ? 'valid'
+          : ''
+        : '';
+    });
+  }
+
   targetSquare: Square | null = null;
 
   async onDragStart(event: DragEvent, square: Square) {
