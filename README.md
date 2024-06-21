@@ -2,8 +2,10 @@
 
 ![image](https://github.com/JeroenEe/AChess/assets/60618555/e5cb30c8-7e4b-472c-bbc5-ccdb797764e9)
 
-Update: 21/6/'24
+Update: 2024-06-24
 - Basic pawn movement added.
+- Valid squares while dragging displayed
+- Turns added
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
