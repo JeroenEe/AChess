@@ -1,5 +1,8 @@
 # AChess
 
+![image](https://github.com/JeroenEe/AChess/assets/60618555/63dafe2e-b0fe-4997-ad4d-168652596cf4)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
 ## Development server
